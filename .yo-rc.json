@@ -1,0 +1,17 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Andrew Menich",
+      "authorEmail": "andrew@madmadmad.com",
+      "authorUrl": ""
+    }
+  },
+  "generator-mdhs-project-scaffold": {
+    "promptValues": {
+      "createNewServer": true,
+      "createNewRepo": true,
+      "createAws": true,
+      "useNitro": true
+    }
+  }
+}
