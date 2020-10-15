@@ -72,5 +72,5 @@
     "test": "jest"
   },
   "repository": "madmadmad/generator-mdhs-project-scaffold",
-  "license": "Apache-2.0"
+  "license": "MIT"
 }
