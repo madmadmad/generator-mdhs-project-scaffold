@@ -783,12 +783,29 @@ module.exports = class extends Generator {
     }
 
     // ? Moving Local env file to new project folder
+    const newEnvPath = `${os.homedir()}/${projectName}_temp/local/.env`;
+    const finalEnvPath = `${os.homedir()}/Documents/Sites/${projectName}/.env`;
+    const newEnv = this.fs.read(newEnvPath);
+
     this.log('Moving local .env file...');
-    this.fs.move(`${os.homedir()}/${projectName}_temp/local/.env`, `${os.homedir()}/Documents/Sites/${projectName}/`);
+    // if file already exists, delete it to make room for new generated file
+    if(this.fs.exists(finalEnvPath)){
+      fs.unlinkSync(finalEnvPath);
+    }
+    this.fs.write(finalEnvPath, newEnv);
 
     // ? Moving general.php file to new project folder
+    const newConfPath = `${os.homedir()}/${projectName}_temp/local/general.php`;
+    const finalConfPath = `${os.homedir()}/Documents/Sites/${projectName}/config/general.php`;
+    const newConf = this.fs.read(newConfPath);
+
     this.log('Moving general.php file...');
-    this.fs.move(`${os.homedir()}/${projectName}_temp/local/general.php`, `${os.homedir()}/Documents/Sites/${projectName}/config/`)
+    // if file already exists, delete it to make room for new generated file
+    if(this.fs.exists(finalConfPath)){
+      fs.unlinkSync(finalConfPath);
+    }
+    this.fs.write(finalConfPath, newConf);
+
 
     // ? Add new repository to Forge site
     if(this.props.config.createNewServer && this.props.config.createNewRepo && this.props.serverIsReady){
