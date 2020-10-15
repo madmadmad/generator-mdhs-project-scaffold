@@ -878,7 +878,7 @@ module.exports = class extends Generator {
     this.log(notice('Running deployment on the site...'));
     try {
       await axios.post(
-        `https://forge.laravel.com/api/v1/servers/${this.props.newServerData.server.id}/sites/${this.props.newSiteData.site.id}/deployment/script`,
+        `https://forge.laravel.com/api/v1/servers/${this.props.newServerData.server.id}/sites/${this.props.newSiteData.site.id}/deployment/deploy`,
         {},
         {headers: this.props.forgeHeaders})
         .then(function(response){
