@@ -84,7 +84,6 @@ yo mdhs-project-scaffold
 ## Known Issues
 
 - Sleep persists after server has successfully provisioned.
-- Uploading environment file to Forge fails quietly.
 
 ## Roadmap & To-dos
 
