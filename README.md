@@ -81,11 +81,15 @@ The generated project folder will be placed in the `<home_directory>/Documents/S
 yo mdhs-project-scaffold
 ```
 
+## Known Issues
+
+- Sleep persists after server has successfully provisioned.
+- Uploading environment file to Forge fails quietly.
+
 ## Roadmap & To-dos
 
 - Cleanup all Forge requests to by more DRY.
 - Create a better store for all the data. Currently, response data is handled willy-nilly.
-- Fix delay after server has successfully provisioned.
 
 ## License
 
