@@ -775,11 +775,11 @@ module.exports = class extends Generator {
     const projectName = this.props.config.slug;
     
     const uploadEnvData = {
-      "content": this.fs.read(`${os.homedir()}/${projectName}_temp/server/.env`)
+      "content": JSON.stringify(this.fs.read(`${os.homedir()}/${projectName}_temp/server/.env`))
     };
 
     const uploadDeploymentScript = {
-      "content": this.fs.read(`${os.homedir()}/${projectName}_temp/server/deployment-script.conf`)
+      "content": JSON.stringify(this.fs.read(`${os.homedir()}/${projectName}_temp/server/deployment-script.conf`))
     }
 
     // ? Moving Local env file to new project folder
